@@ -1,0 +1,47 @@
+server:
+  port: 8000
+
+spring:
+  # jackson
+  jackson:
+    default-property-inclusion: non_null
+    date-format: yyyy-MM-dd HH:mm:SS
+    time-zone: GMT+8
+  # http file
+  servlet:
+    multipart:
+      max-request-size: 1000MB
+      max-file-size: 1000MB
+      resolve-lazily: true
+  # default false
+  #  main:
+  #    allow-circular-references: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: '@rufeng20001123'
+    url: jdbc:mysql://localhost:3306/employees?serverTimezone=Asia/Shanghai
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+  # mybatis
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    use-generated-keys: true
+    jdbc-type-for-null: null
+    local-cache-scope: statement
+  mapper-locations: classpath:/mapper/mjms/*.xml
+
+# apollo
+#app:
+#  id: mjms-pred
+#apollo:
+#  meta: http://10.160.9.197:8080,http://10.160.9.198:8080,http://42.193.188.51:8080
+#  bootstrap:
+#    enabled: true
+#    namespaces: application,mjms-datasource,meal-datasource
+jwt:
+  key: SyI/8w+X528KqE2S8JKU8Sv1Bb+coixCZrU/fYYKDqc=

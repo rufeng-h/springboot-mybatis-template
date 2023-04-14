@@ -1,0 +1,16 @@
+logging:
+  level:
+    web: DEBUG
+    sql: DEBUG
+    org.ibatis: DEBUG
+    com.mjmspred: DEBUG
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /docs
+  packages-to-scan: com.mjmspred.controller
+
+
